@@ -15,10 +15,10 @@ export const Footer = () => {
               <Scissors className="w-8 h-8 text-primary transition-transform duration-300 group-hover:rotate-45" />
               <div className="flex flex-col">
                 <span className="font-display text-xl font-bold text-foreground tracking-wide">
-                  Top
+                  Dark 
                 </span>
                 <span className="text-primary text-sm tracking-[0.3em] uppercase -mt-1">
-                  Salon
+                  Barbershop
                 </span>
               </div>
             </Link>
