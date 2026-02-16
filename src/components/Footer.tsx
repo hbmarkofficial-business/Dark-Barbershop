@@ -82,13 +82,10 @@ export const Footer = () => {
             </h4>
             <ul className="space-y-3 text-sm">
               <li className="flex justify-between text-muted-foreground">
-                <span>Montag - Freitag</span>
-                <span className="text-foreground">10:00 - 20:00</span>
+                <span>Montag - Samstag</span>
+                <span className="text-foreground">9:00 - 20:00</span>
               </li>
-            <li className="flex justify-between text-muted-foreground">
-                <span>Samstag</span>
-                <span className="text-foreground">10:00 - 19:00 </span>
-              </li>
+            
                
               <li className="flex justify-between text-muted-foreground">
                 <span>Sonntag</span>
@@ -106,17 +103,17 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-muted-foreground text-sm">
-                 Färberstraße 54<br />
-                  90402 Nürnberg, Deutschland
+                 Greifswalder Str. 224<br />
+                  10405 Berlin, Deutschland
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
                 <a 
-                  href="tel:015118311067" 
+                  href="tel:017664116839" 
                   className="text-muted-foreground hover:text-primary transition-colors text-sm"
                 >
-                015118311067
+                017664116839
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -137,7 +134,7 @@ export const Footer = () => {
       <div className="border-t border-border">
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} Top Salon. Alle Rechte vorbehalten.
+            © {currentYear} Dark Barbershop. Alle Rechte vorbehalten.
           </p> 
           <div className="flex gap-6 text-sm">
             <Link to="/impressum" className="text-muted-foreground hover:text-primary transition-colors">
