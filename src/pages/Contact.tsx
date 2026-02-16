@@ -10,46 +10,57 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Kontakt & Termin | Gentleman Barber Shop Berlin</title>
+        <title>Kontakt & Termin | The Gentleman's Cut Berlin</title>
         <meta 
           name="description" 
-          content="Kontaktieren Sie Gentleman Barber Shop in Berlin. Vereinbaren Sie Ihren Termin über unseren Chatbot oder rufen Sie uns an. Mo-Sa 09:00-20:00 Uhr." 
+          content="Kontaktieren Sie The Gentleman's Cut in Berlin. Vereinbaren Sie Ihren Termin über unseren Chatbot oder rufen Sie uns an. Mo-Fr 09-20 Uhr, Sa 10-18 Uhr." 
         />
         <link rel="canonical" href="https://gentlemanscut.de/kontakt" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Barbershop",
-            "name": "Gentleman Barber Shop",
-            "url": "https://gentlemanscut.de",
-            "logo": "https://gentlemanscut.de/images/logo.png",
-            "image": "https://gentlemanscut.de/images/shop.jpg",
-            "telephone": "+49 176 64116839",
+            "@id": "https://example-barbershop.at/#barbershop",
+            "name": "Beispiel Barbershop Wien",
+            "url": "https://example-barbershop.at",
+            "logo": "https://example-barbershop.at/images/logo.png",
+            "image": "https://example-barbershop.at/images/shop.jpg",
+            "telephone": "+43 1 2345678",
             "priceRange": "€€",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Greifswalder Str. 224",
-              "addressLocality": "Berlin",
-              "postalCode": "10405",
-              "addressCountry": "DE"
+              "streetAddress": "Musterstraße 12",
+              "addressLocality": "Wien",
+              "postalCode": "1020",
+              "addressCountry": "AT"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": "52.5350",
-              "longitude": "13.4240"
+              "latitude": "48.2167",
+              "longitude": "16.3958"
+            },
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "Wien"
             },
             "openingHoursSpecification": [
               {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
                 "opens": "09:00",
-                "closes": "20:00"
+                "closes": "19:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "17:00"
               }
             ],
             "sameAs": [
-              "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38856.69600076693!2d13.302471769531214!3d52.50550254346926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84f801c51a5e7%3A0xfe73a645831f61f1!2sDark%20Barbershop%20-%20Berlin!5e0!3m2!1sde!2sde!4v1771283027947!5m2!1sde!2sde",
-              "https://www.instagram.com/gentlemanscut",
-              "https://www.facebook.com/gentlemanscut"
+              "https://www.google.com/maps?cid=1234567890",
+              "https://www.instagram.com/beispielbarbershop",
+              "https://www.facebook.com/beispielbarbershop"
             ]
           })}
         </script>
@@ -85,7 +96,6 @@ const Contact = () => {
         <section className="py-24 bg-charcoal">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              {/* Reihenfolge für Desktop: Chatbot links, Kontakt rechts */}
               <AnimateOnScroll animation="slide-left" className="order-1 lg:order-1">
                 <div className="bg-card border border-border rounded-sm p-8 md:p-10 h-fit">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
@@ -133,29 +143,18 @@ const Contact = () => {
                     </a>
                   </div>
 
-                  {/* Alternative Buchung Block */}
                   <div className="mt-8 pt-8 border-t border-border">
                     <p className="text-muted-foreground text-center mb-6 leading-relaxed">
                       Alternativ können Sie direkt hier die Verfügbarkeit Ihres Wunschtermins prüfen oder einen Termin buchen:
                     </p>
                     <div className="flex flex-col gap-3">
-                      <Button 
-                        asChild 
-                        variant="outline" 
-                        size="lg" 
-                        className="w-full"
-                      >
+                      <Button asChild variant="outline" size="lg" className="w-full">
                         <Link to="/termine/verfügbarkeit">
                           <Search className="w-5 h-5 mr-2" />
                           Verfügbarkeit prüfen
                         </Link>
                       </Button>
-                      <Button 
-                        asChild 
-                        variant="gold" 
-                        size="lg" 
-                        className="w-full"
-                      >
+                      <Button asChild variant="gold" size="lg" className="w-full">
                         <Link to="/termine/buchen">
                           <Calendar className="w-5 h-5 mr-2" />
                           Termin buchen
@@ -192,10 +191,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-foreground mb-1">Telefon</h3>
-                        <a 
-                          href="tel:017664116839" 
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                        >
+                        <a href="tel:017664116839" className="text-muted-foreground hover:text-primary transition-colors">
                           017664116839
                         </a>
                       </div>
@@ -207,11 +203,8 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-foreground mb-1">E-Mail</h3>
-                        <a 
-                          href="mailto:info@gentlemanscut.de" 
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          info@gentlemanscut.de
+                        <a href="mailto:info@gentlemanscut.de" className="text-muted-foreground hover:text-primary transition-colors">
+                          info@mustershop.de
                         </a>
                       </div>
                     </div>
@@ -239,7 +232,7 @@ const Contact = () => {
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="Standort Gentleman Barber Shop"
+                      title="Standort The Gentleman's Cut"
                     />
                   </div>
                 </div>
@@ -255,7 +248,6 @@ const Contact = () => {
 };
 
 export default Contact;
-
 
 
 
